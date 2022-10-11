@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_ImageCompression" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未載入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-ra-WoY">
+                                <rect key="frame" x="10" y="54" width="43" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fms-sL-2fY">
+                                <rect key="frame" x="346" y="54" width="58" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="載入圖片"/>
+                                <connections>
+                                    <action selector="didLoadFileWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mGh-tb-Tm5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZE-Xi-3jJ">
+                                <rect key="frame" x="0.0" y="93" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TZE-Xi-3jJ" secondAttribute="height" multiplier="16:9" id="wv0-sw-aCc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未壓縮" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-qa-U82">
+                                <rect key="frame" x="10" y="336" width="43" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-AP-4Ye">
+                                <rect key="frame" x="0.0" y="363" width="414" height="233"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RdK-AP-4Ye" secondAttribute="height" multiplier="16:9" id="YdC-cV-K8m"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc3-Ba-MIJ">
+                                <rect key="frame" x="346" y="330" width="58" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="壓縮圖片"/>
+                                <connections>
+                                    <action selector="didCompressionFileWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CO7-Tr-aQc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="RdK-AP-4Ye" firstAttribute="top" secondItem="wb4-qa-U82" secondAttribute="bottom" constant="10" id="0Q6-om-SfS"/>
+                            <constraint firstItem="RdK-AP-4Ye" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="35Y-xh-ajY"/>
+                            <constraint firstItem="GFo-ra-WoY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="8mL-bg-pbc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oc3-Ba-MIJ" secondAttribute="trailing" constant="10" id="Al7-tL-3ve"/>
+                            <constraint firstItem="Fms-sL-2fY" firstAttribute="centerY" secondItem="GFo-ra-WoY" secondAttribute="centerY" id="IsQ-Ql-USl"/>
+                            <constraint firstItem="RdK-AP-4Ye" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Nwe-Ba-yxk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fms-sL-2fY" secondAttribute="trailing" constant="10" id="OgO-HJ-ayp"/>
+                            <constraint firstItem="GFo-ra-WoY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="QyO-XR-WfB"/>
+                            <constraint firstItem="wb4-qa-U82" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="UCA-mb-Tpa"/>
+                            <constraint firstItem="oc3-Ba-MIJ" firstAttribute="centerY" secondItem="wb4-qa-U82" secondAttribute="centerY" id="VsN-1p-jkY"/>
+                            <constraint firstItem="TZE-Xi-3jJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dJO-4B-CKb"/>
+                            <constraint firstItem="TZE-Xi-3jJ" firstAttribute="top" secondItem="GFo-ra-WoY" secondAttribute="bottom" constant="10" id="egx-S9-nsC"/>
+                            <constraint firstItem="Fms-sL-2fY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="gP5-BA-EsA"/>
+                            <constraint firstItem="TZE-Xi-3jJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="imn-wc-eGm"/>
+                            <constraint firstItem="wb4-qa-U82" firstAttribute="top" secondItem="TZE-Xi-3jJ" secondAttribute="bottom" constant="10" id="rj9-p6-ebE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageLabel" destination="wb4-qa-U82" id="bk7-Ac-c4U"/>
+                        <outlet property="resultImageView" destination="RdK-AP-4Ye" id="Tfj-m8-roj"/>
+                        <outlet property="targetImageLabel" destination="GFo-ra-WoY" id="ygX-r8-1zA"/>
+                        <outlet property="targetImageView" destination="TZE-Xi-3jJ" id="BUG-RP-2I0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+    </scenes>
+</document>
